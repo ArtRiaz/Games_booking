@@ -33,9 +33,6 @@
             margin: 0 auto;
         }
 
-        .usercard {
-            text-align: center;
-        }
 
         button {
             border: 0;
@@ -111,7 +108,7 @@
             document.getElementById('error').innerText = "";
             let name = document.getElementById('user_name').value;
             let password = document.getElementById('pass').value;
-            if (password.length > 5) {
+            if (password.length < 5) {
                 document.getElementById('error').innerText = "Password must be at least 5 characters";
                 return ;
             }
