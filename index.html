@@ -116,7 +116,11 @@
                 password: password
 
             }
-            tg.sendData(JSON.stringify(data));
+            // tg.sendData(JSON.stringify(data));
+
+             Telegram.WebApp.onEvent('mainButtonClicked', function (){
+                tg.sendData(data);
+             });
 
 
             tg.close();
