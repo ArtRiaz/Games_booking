@@ -116,11 +116,11 @@
         register.addEventListener("click", function() {
             document.getElementById('main').style.display = 'none';
             document.getElementById('form').style.display = 'block';
+            document.getElementById('cabinet').style.display = 'block';
             document.getElementById('user_name').value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
         });
 
         sign.addEventListener('click', () => {
-            document.getElementById('error').innerText = "";
             let name = document.getElementById('user_name').value;
             let password = document.getElementById('pass').value;
             let data = {
@@ -131,12 +131,12 @@
         let usercard = document.getElementById("usercard");
 
         let p = document.createElement("p");
-        
+
         p.innerText = `${tg.initDataUnsafe.user.first_name}
         ${tg.initDataUnsafe.user.last_name}`;
-        
+
         usercard.appendChild(p);
-        
+
         booking.addEventListener('click', () => {
 
         })
