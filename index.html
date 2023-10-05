@@ -102,14 +102,14 @@
     </div>
     <div>
         <div id="cabinet">
-        <h1>Cashflow games</h1>
-        <img src="b02.jpg" alt="Cashflow">
-        <p>Личный кабинет</p>
-        <div class="usercard" id="usercard"></div>
-        <button id="booking">Бронирование</button>
-        <br>
-        <button id="buying">Покупки</button>
-    </div>
+            <h1>Cashflow games</h1>
+            <img src="b02.jpg" alt="Cashflow">
+            <p>Личный кабинет</p>
+            <div class="usercard" id="usercard"></div>
+            <button id="booking">Бронирование</button>
+            <br>
+            <button id="buying">Покупки</button>
+        </div>
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -124,16 +124,17 @@
         });
 
         sign.addEventListener('click', function() {
+	    document.getElementById('form').style.display = 'none';	
 	    document.getElementById('cabinet').style.display = 'block';	
-            document.getElementById('form').style.display = 'none';
+            
             
 
-            let name = document.getElementById('user_name').value;
-            let password = document.getElementById('pass').value;
-            let data = {
-            name: name,
-            password: password};
-            tg.sendData(JSON.stringify(data))
+            // let name = document.getElementById('user_name').value;
+            // let password = document.getElementById('pass').value;
+            // let data = {
+            // name: name,
+            // password: password};
+            // tg.sendData(JSON.stringify(data))
             
             // let usercard = document.getElementById("usercard");
             // let p = document.createElement("p");
