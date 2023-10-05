@@ -76,6 +76,12 @@
             text-align: center;
         }
 
+	#dopservice {
+	   display: none;
+            text-align: center;
+	}
+	    
+
         .usercard {
 	        text-align: center;
         }
@@ -111,11 +117,21 @@
             <button id="buying">Покупки</button>
         </div>
     </div>
+    <div id="dopservice">
+        <h1>Cashflow games</h1>
+        <img src="cf.png" alt="Cashflow">
+        <p>"Welcome to the world of Cashflow, where you can embark on your journey to financial independence! This game will teach you how to manage finances, invest, and pave the way to freedom from financial worries.</p>
+        <button id="enter">Бар</button>
+        <br>
+        <button id="planning">Другие услуги</button>
+    </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
         let register = document.getElementById('enter');
         let sign = document.getElementById('sign');
+	let service = document.getElementById('service');
+
 
         tg.expand();
         register.addEventListener("click", function() {
@@ -127,6 +143,14 @@
 	    document.getElementById('main').style.display = 'none';
 	    document.getElementById('form').style.display = 'none';	
 	    document.getElementById('cabinet').style.display = 'block';	
+
+	service.addEventListener("click", function() {
+            document.getElementById('main').style.display = 'none';
+            document.getElementById('dopservice').style.display = 'block';	
+        });
+
+
+		
             
             
 
