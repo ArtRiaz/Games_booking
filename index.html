@@ -33,13 +33,17 @@
             margin: 0 auto;
         }
 
+        .usercard {
+            text-align: center;
+        }
+
         button {
             border: 0;
             border-radius: 5px;
             margin-top: 50px;
             height: 40px;
             width: 100px;
-            font-size: 10px;
+            font-size: 15px;
             font-weight: 400;
             cursor: pointer;
             transition: all 500ms ease;
@@ -75,8 +79,8 @@
 <body>
     <div id="main">
         <h1>Cashflow games</h1>
-        <img src="./cf.jpeg" alt="Cashflow">
-        <p>Welcome to the world of Cashflow, where you can embark on your journey to financial independence! This game will teach you how to manage finances, invest, and pave the way to freedom from financial worries</p>
+        <img src="b02.jpg" alt="Cashflow">
+        <p>"Welcome to the world of Cashflow, where you can embark on your journey to financial independence! This game will teach you how to manage finances, invest, and pave the way to freedom from financial worries.</p>
         <button id="enter">Личный кабинет</button>
         <br>
         <button id="planning">Расписание</button>
@@ -91,13 +95,14 @@
             <button id="sign">Sign in</button>
         </form>
     </div>
+    <div class="usercard" id="usercard"></div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
         let register = document.getElementById('enter');
         let sign = document.getElementById('sign');
         tg.expand();
-        register.addEventListener("click", () => {
+        register.addEventListener("click", function() {
             document.getElementById('main').style.display = 'none';
             document.getElementById('form').style.display = 'block';
             document.getElementById('user_name').value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
@@ -118,11 +123,15 @@
             }
             tg.sendData(JSON.stringify(data));
 
-             
-
-
             tg.close();
         });
+        let usercard = document.getElementById('usercard')
+        let p = document.createElement('p');
+        p.innerText = `$(tg.initDataUnsafe.first_name)
+        $(tg.initDataUnsafe.last_name)
+        $(tg.initDataUnsafe.user.id)`;
+
+        usercard.appendChild(p);
     </script>
 </body>
 </html>
