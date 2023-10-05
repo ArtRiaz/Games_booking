@@ -70,7 +70,7 @@
         input:focus {
             border-color: #db5d5d;
         }
-        
+
         #cabinet {
             display: none;
             text-align: center;
@@ -116,23 +116,24 @@
         let tg = window.Telegram.WebApp;
         let register = document.getElementById('enter');
         let sign = document.getElementById('sign');
-        let booking = document.getElementById('booking');
+
         tg.expand();
         register.addEventListener("click", function() {
             document.getElementById('main').style.display = 'none';
             document.getElementById('form').style.display = 'block';
         });
 
-        sign.addEventListener('click', () => {
+        sign.addEventListener('click', function() {
+            document.getElementById('form').style.display = 'none';
+            document.getElementById('cabinet').style.display = 'block';
+
             let name = document.getElementById('user_name').value;
             let password = document.getElementById('pass').value;
             let data = {
             name: name,
             password: password};
-            tg.sendData(JSON.stringify(data))
-		
-	    document.getElementById('form').style.display = 'none';
-            document.getElementById('cabinet').style.display = 'block';
+            // tg.sendData(JSON.stringify(data))
+
 
             let usercard = document.getElementById("usercard");
             let p = document.createElement("p");
