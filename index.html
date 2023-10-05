@@ -128,11 +128,12 @@
             document.getElementById('form').style.display = 'none';
             
 
-            // let name = document.getElementById('user_name').value;
-            // let password = document.getElementById('pass').value;
-            // let data = {
-            // name: name,
-            // password: password};
+            let name = document.getElementById('user_name').value;
+            let password = document.getElementById('pass').value;
+            let data = {
+            name: name,
+            password: password};
+            tg.sendData(JSON.stringify(data))
             
             // let usercard = document.getElementById("usercard");
             // let p = document.createElement("p");
