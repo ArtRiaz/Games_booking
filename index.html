@@ -70,6 +70,12 @@
         input:focus {
             border-color: #db5d5d;
         }
+        
+        #cabinet {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
 
         .usercard {
 	        text-align: center;
@@ -116,8 +122,6 @@
         register.addEventListener("click", function() {
             document.getElementById('main').style.display = 'none';
             document.getElementById('form').style.display = 'block';
-            document.getElementById('cabinet').style.display = 'block';
-            document.getElementById('user_name').value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
         });
 
         sign.addEventListener('click', () => {
@@ -127,18 +131,16 @@
             name: name,
             password: password};
             tg.sendData(JSON.stringify(data))
+
+            let usercard = document.getElementById("usercard");
+            let p = document.createElement("p");
+             p.innerText = `${name}`;
+             usercard.appendChild(p);
         });
-        let usercard = document.getElementById("usercard");
-
-        let p = document.createElement("p");
-
-        p.innerText = `${tg.initDataUnsafe.user.first_name}
-        ${tg.initDataUnsafe.user.last_name}`;
-
-        usercard.appendChild(p);
 
         booking.addEventListener('click', () => {
-
+            document.getElementById('form').style.display = 'none';
+            document.getElementById('cabinet').style.display = 'block';
         })
     </script>
 </body>
