@@ -130,17 +130,15 @@
             name: name,
             password: password};
             tg.sendData(JSON.stringify(data))
+		
+	    document.getElementById('form').style.display = 'none';
+            document.getElementById('cabinet').style.display = 'block';
 
             let usercard = document.getElementById("usercard");
             let p = document.createElement("p");
              p.innerText = `${name}`;
              usercard.appendChild(p);
         });
-
-        booking.addEventListener('click', () => {
-            document.getElementById('form').style.display = 'none';
-            document.getElementById('cabinet').style.display = 'block';
-        })
     </script>
 </body>
 </html>
